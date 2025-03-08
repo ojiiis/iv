@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HYIPLAB - HYIP Investment HTML template</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+<!-- bootstrap 4  -->
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<!-- fontawesome 5  -->
+<link rel="stylesheet" href="assets/css/all.min.css">
+<!-- line-awesome webfont -->
+<link rel="stylesheet" href="assets/css/line-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+<!-- slick slider css -->
+<link rel="stylesheet" href="assets/css/vendor/slick.css">
+<link rel="stylesheet" href="assets/css/vendor/dots.css">
+<!-- dashdoard main css -->
+<link rel="stylesheet" href="assets/css/main.css">
