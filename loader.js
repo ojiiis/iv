@@ -120,6 +120,8 @@ async function handleForm(elem,e){
     if(res.status){
         if(elem.action.includes("signup")){
             window.localStorage.addItem("token",res.token);
+            alert(res.message);
+            window.location.href = "./dashboard.html";
         }
     }else{
         alert(res.message);
