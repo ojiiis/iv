@@ -44,7 +44,7 @@ var content = "index.jl";
 switch(window.location.href.toString().split("/")[window.location.href.toString().split("/").length - 1].split("?")[0]){
     case "dashboard.html":
         content = "dashboard.jl";
-        if(window.localStorage.getItem("token") == null || window.localStorage.getItem("token") == ""){
+        if(windolocalStorage.getItem("token") == null || window.localStorage.getItem("token") == ""){
             window.location = "./";
         }
     break;
@@ -119,7 +119,7 @@ async function handleForm(elem,e){
     const res = await req.json();
     if(res.status){
         if(elem.action.includes("signup")){
-            window.localStorage.addItem("token",res.token);
+            localStorage.addItem("token",res.token);
             alert(res.message);
             window.location.href = "./dashboard.html";
         }
