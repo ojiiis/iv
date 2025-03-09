@@ -79,6 +79,29 @@ window.onload = () => {
         });
         
     },2000);
+    // Mobile menu JavaScript
+document.querySelectorAll(".navbar-collapse > ul > li > a, .navbar-collapse ul.sub-menu > li > a")
+  .forEach(link => {
+    link.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent default link behavior if needed
+      
+      const element = this.parentElement;
+
+      if (element.classList.contains("open")) {
+        element.classList.remove("open");
+        element.querySelectorAll("li").forEach(li => li.classList.remove("open"));
+      } else {
+        element.classList.add("open");
+        element.parentElement.querySelectorAll("li").forEach(sibling => {
+          if (sibling !== element) {
+            sibling.classList.remove("open");
+            sibling.querySelectorAll("li").forEach(subLi => subLi.classList.remove("open"));
+          }
+        });
+      }
+    });
+  });
+
 };
 
 
