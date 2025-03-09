@@ -78,7 +78,7 @@ window.onload = () => {
             img.style.backgroundImage = bg;
         });
         
-    },2000);
+   
     // Mobile menu JavaScript
 document.querySelectorAll(".navbar-collapse > ul > li > a, .navbar-collapse ul.sub-menu > li > a")
   .forEach(link => {
@@ -101,6 +101,8 @@ document.querySelectorAll(".navbar-collapse > ul > li > a, .navbar-collapse ul.s
       }
     });
   });
+  
+    },2000);
 
 };
 
