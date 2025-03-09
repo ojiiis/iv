@@ -60,6 +60,9 @@ switch(window.location.href.toString().split("/")[window.location.href.toString(
     case "registration.html":
         content = "registration.jl";
     break;
+    case "dashboard.html":
+        content = "dashboard.jl";
+    break;
 
 }
 setTimeout(()=>{
