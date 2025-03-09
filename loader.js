@@ -46,6 +46,10 @@ switch(window.location.href.toString().split("/")[window.location.href.toString(
         content = "dashboard.jl";
         if(windolocalStorage.getItem("token") == null || window.localStorage.getItem("token") == ""){
             window.location = "./";
+        }else{
+     setTimeout(()=>{
+        document.getElementsByClassName("preloader")[0].remove(); 
+     },5000);
         }
     break;
     case "contact.html":
@@ -60,10 +64,7 @@ switch(window.location.href.toString().split("/")[window.location.href.toString(
     case "registration.html":
         content = "registration.jl";
     break;
-    case "dashboard.html":
-        content = "dashboard.jl";
-    break;
-
+    
 }
 setTimeout(()=>{
     putContent("./app/"+content, "body");
