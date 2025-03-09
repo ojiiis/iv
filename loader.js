@@ -119,7 +119,7 @@ async function handleForm(elem,e){
     const res = await req.json();
     if(res.status){
         if(elem.action.includes("signup")){
-            localStorage.addItem("token",res.token);
+            localStorage.setItem("token",res.token);
             alert(res.message);
             window.location.href = "./dashboard.html";
         }
