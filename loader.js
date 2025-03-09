@@ -112,7 +112,18 @@ async function handleForm(elem,e){
     data.forEach((v,k)=>{
         payload[k] = v;
     });
+    
     const req = await fetch(elem.action,{method:"POST",headers:{"token":window.localStorage.getItem("token")},body:JSON.stringify(payload)});
     const res = await req.json();
+    if(res.status){
+        if(elem.action.includes("signup")){
+            window.localStorage.addItem("token",res.token);
+        }
+    }else{
+        alert(res.message);
+    }
     console.log(res);
 }
+
+
+//https://lin.com.ng/iv/signup
