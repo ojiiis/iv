@@ -68,10 +68,10 @@ switch(window.location.href.toString().split("/")[window.location.href.toString(
 }
 setTimeout(()=>{
     putContent("./app/"+content, "body");
-},500);
+},1000);
 setTimeout(()=>{
     putContent("./app/footer.jl", "body");
-},1000);
+},2000);
 
 // Load footer after the page has fully loaded
 window.onload = () => {
