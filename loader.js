@@ -6,6 +6,7 @@ async function putContent(file, place) {
         const res = await req.text();
         targetElement.insertAdjacentHTML("beforeend", res);
     } catch (e) {
+        alert(e);
         console.error(e);
     }
 }
@@ -30,6 +31,7 @@ async function putScript(file) {
             document.body.appendChild(newScript);
         }
     } catch (e) {
+        alert(e);
         console.error(e);
     }
 }
@@ -81,6 +83,7 @@ switch(window.location.href.toString().split("/")[window.location.href.toString(
     break;
     
 }
+alert(content);
 const App = new AppLoader();
 App.load("./app/head.jl", "head")
    .load("./app/header.jl", "body")
