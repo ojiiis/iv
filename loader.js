@@ -81,7 +81,7 @@ switch(window.location.href.toString().split("/")[window.location.href.toString(
     break;
     
 }
-alert(content);
+
 const App = new AppLoader();
 App.load("./app/head.jl", "head")
    .load("./app/header.jl", "body")
