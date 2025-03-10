@@ -61,6 +61,7 @@ var content = "index.jl";
 switch(window.location.href.toString().split("/")[window.location.href.toString().split("/").length - 1].split("?")[0]){
     case "dashboard.html":
         content = "dashboard.jl";
+        alert("dashboard block");
         if(window.localStorage.getItem("token") == null || window.localStorage.getItem("token") == ""){
             window.location = "./";
         }
