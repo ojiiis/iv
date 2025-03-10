@@ -2,7 +2,7 @@ async function putContent(file, place) {
     try {
         const targetElement = document.getElementsByTagName(place)[0];
         const req = await fetch(file);
-        if (!req.ok) throw new Error(`HTTP error! Status: ${req.status}`);
+        if (!req.ok) throw new Error(`HTTP error! Status: ${req.status}, File: ${file}`);
         const res = await req.text();
         targetElement.insertAdjacentHTML("beforeend", res);
     } catch (e) {
@@ -14,7 +14,7 @@ async function putContent(file, place) {
 async function putScript(file) {
     try {
         const req = await fetch(file);
-        if (!req.ok) throw new Error(`HTTP error! Status: ${req.status}`);
+        if (!req.ok) throw new Error(`HTTP error! Status: ${req.status}, File: ${file}`);
         const res = await req.text();
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = res;
@@ -88,5 +88,5 @@ const App = new AppLoader();
 App.load("./app/head.jl", "head")
    .load("./app/header.jl", "body")
    .load("./app/"+content,"body")
-   .script("script.js")
+   .script("script.jl")
    .finally(() => alert("All content loaded"));
