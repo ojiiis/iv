@@ -1,7 +1,7 @@
-var content = "index.jl";
+var content = "index";
 switch(window.location.href.toString().split("/")[window.location.href.toString().split("/").length - 1].split("?")[0]){
     case "dashboard.html":
-        content = "dashboard.jl";
+        content = "dashboard";
        // alert("dashboard block");
         if(window.localStorage.getItem("token") == null || window.localStorage.getItem("token") == ""){
             window.location = "./";
@@ -9,26 +9,27 @@ switch(window.location.href.toString().split("/")[window.location.href.toString(
         
     break;
     case "contact.html":
-        content = "contact.jl";
+        content = "contact";
     break;
     case "about.html":
-        content = "about.jl";
+        content = "about";
     break;
     case "login.html":
-        content = "login.jl";
+        content = "login";
     break;
     case "registration.html":
-        content = "registration.jl";
+        content = "registration";
     break;
     
 }
 
 
-App("app").head("./app/head.jl")
-   .body("./app/header.jl")
+
+App("app").head("./app/head")
+   .body("./app/header")
    .body("./app/"+content,"body")
-   .script("./app/script.jl")
-   .run(() => alert("All content loaded"));
+   .script("./app/script")
+   .run(() => console.log("All content loaded"));
    
   
  
