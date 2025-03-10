@@ -61,13 +61,10 @@ var content = "index.jl";
 switch(window.location.href.toString().split("/")[window.location.href.toString().split("/").length - 1].split("?")[0]){
     case "dashboard.html":
         content = "dashboard.jl";
-        if(windolocalStorage.getItem("token") == null || window.localStorage.getItem("token") == ""){
+        if(window.localStorage.getItem("token") == null || window.localStorage.getItem("token") == ""){
             window.location = "./";
-        }else{
-     setTimeout(()=>{
-        document.getElementsByClassName("preloader")[0].remove(); 
-     },10000);
         }
+        
     break;
     case "contact.html":
         content = "contact.jl";
