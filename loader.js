@@ -87,6 +87,6 @@ alert(content);
 const App = new AppLoader();
 App.load("./app/head.jl", "head")
    .load("./app/header.jl", "body")
-   .load("./app/"+content,"body");
+   .load("./app/"+content,"body")
    .script("script.js")
    .finally(() => alert("All content loaded"));
