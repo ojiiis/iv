@@ -7,9 +7,12 @@
     
     <script src="loader.js"></script>
     <script>
+       if(window.localStorage.getItem("token") == null || window.localStorage.getItem("token") == ""){
+            window.location = "./";
+        }
         const App = oLoader();
         App.head("./app/head");
-        App.body("./app/header");
+        App.body("./app/header-u");
         App.body("./app/dashboard");
         App.body("./app/footer");
         App.script("./app/script");
