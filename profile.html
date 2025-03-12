@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" id="app">
+<head>
+    <script src="https://ojiiis.github.io/oLoader/"></script>
+</head>
+<body>
+    
+    <script src="script.js"></script>
+    <script>
+        const App = oLoader();
+        App.head("./app/head");
+        App.body("./app/header-u");
+        App.body("./app/profile");
+        App.body("./app/footer");
+        App.script("./app/script");
+        App.load(async()=>{
+           const req = await fetch("https://lin.com.ng/iv/profile",{
+            method:"POST",
+            headers:{
+                token:window.localStorage.getItem("token")
+            }
+           });
+           const res = await req.json();
+            if(res.status){
+                let f  = '';
+                  for(i in res.data){
+                 
+                   f += `<div class="form-group">
+                <label>${capitalizeFirstLetter(i.replace("_"," "))}</label>
+                <input type="text" name="${i}" value="${res.data[i]}" class="form-control">
+              </div>`;
+              if(i == "email"){
+                        f += `<div class="form-group">
+                <label>Password</label>
+                <input type="text" name="password" placeholder="Enter a new password" class="form-control">
+              </div>`;  
+                    } 
+                  }
+                  f +=`<div class="mt-3">
+                <button class="cmn-btn">Change account data</button>
+              </div>`;
+
+                  document.getElementsByTagName("form")[0].innerHTML = f;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<div class="page-wrapper">
+
+<!-- account section start -->
+<div class="account-section bg_img" data-background="assets/images/bg/bg-5.jpg">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-5 col-lg-7">
+        <div class="account-card">
+        
+          <div class="account-card__body">
+            <h3 class="text-left">View and update your account info</h3>
+            <form class="mt-4" onsubmit=handleForm(this,event) action="https://lin.com.ng/iv/update-profile">
+
+   
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- account section end -->
+
+</div> <!-- page-wrapper end -->

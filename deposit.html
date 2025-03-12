@@ -7,13 +7,18 @@
     
     <script src="script.js"></script>
     <script>
+       if(window.localStorage.getItem("token") == null || window.localStorage.getItem("token") == "" || window.localStorage.getItem("token") == "undefined"){
+            window.location = "./";
+        }
         const App = oLoader();
         App.head("./app/head");
-        App.body("./app/header");
-        App.body("./app/registration");
+        App.body("./app/header-u");
+        App.body("./app/deposit");
         App.body("./app/footer");
         App.script("./app/script");
-        App.load();
+        App.load(()=>{
+
+        });
     </script>
 </body>
 </html>

@@ -27,12 +27,12 @@
 <div class="header__bottom">
 <div class="container">
   <nav class="navbar navbar-expand-xl p-0 align-items-center">
-    <a class="site-logo site-title" href="index.html"><img src="assets/images/logo.png" alt="site-logo"></a>
+    <a class="site-logo site-title" href="dashboard.html"><img src="assets/images/logo.png" alt="site-logo"></a>
     
     
     <ul class="account-menu mobile-acc-menu">
       <li class="icon">
-        <a href="login.html"><i class="las la-user"></i></a>
+        <a href="profile.html"><i class="las la-user"></i></a>
       </li>
     </ul> 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,22 +40,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav main-menu m-auto">
-        <li> <a href="index.html">Home</a></li>
-        <li> <a href="about.html">About Us</a></li>
-        <li> <a href="plan.html">Plan</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li class="menu_has_children"><a href="#0">Blog</a>
+        <li> <a href="dashboard.html">Home</a></li>
+        <li> <a href="deposit.html">Deposit</a></li>
+        <li> <a href="deposit-list.html">Deposit List</a></li>
+        <li><a href="withdraw.html">Withdrawal</a></li>
+        <li><a href="profile.html">profile</a></li>
+        <li class="menu_has_children"><a href="javasript:void(0)">History</a>
           <ul class="sub-menu">
-            <li><a href="blog.html">Blog Posts</a></li>
-            <li><a href="blog-details.html">Blog Details</a></li>
+            <li><a href="deposit-history.html">Deposit History</a></li>
+            <li><a href="earning-history.html">Earning History</a></li>
+            <li><a href="withdrawals-history.html">Withdrawals History</a></li>
           </ul>
         </li>
-        <li class="menu_has_children"><a href="#0">Page</a>
-          <ul class="sub-menu">
-            <li><a href="error-404.html">Error - 404</a></li>
-          </ul>
-        </li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="referrals.html">Referrals panel</a></li>
+        <li><a href="security.html">Security</a></li>
       </ul>
       <div class="nav-right">
         <ul class="account-menu ml-3">

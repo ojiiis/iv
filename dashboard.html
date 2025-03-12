@@ -5,9 +5,9 @@
 </head>
 <body>
     
-    <script src="loader.js"></script>
+    <script src="script.js"></script>
     <script>
-       if(window.localStorage.getItem("token") == null || window.localStorage.getItem("token") == ""){
+       if(window.localStorage.getItem("token") == null || window.localStorage.getItem("token") == "" || window.localStorage.getItem("token") == "undefined"){
             window.location = "./";
         }
         const App = oLoader();
@@ -16,7 +16,15 @@
         App.body("./app/dashboard");
         App.body("./app/footer");
         App.script("./app/script");
-        App.load();
+        App.load(()=>{
+            const balances = JSON.parse(window.localStorage.getItem("balance"));
+            document.getElementById("tb").textContent = "$" +balances.total_balance;
+            document.getElementById("tw").textContent = "$" +balances.total_withdrawals;
+            document.getElementById("pw").textContent = "$" +balances.pending_withdrawals;
+            document.getElementById("te").textContent = "$" +balances.total_earning;
+            document.getElementById("ad").textContent = "$" +balances.active_deposit;
+            document.getElementById("la").textContent =  balances.last_access;
+        });
     </script>
 </body>
 </html>
