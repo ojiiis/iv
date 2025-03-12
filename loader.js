@@ -1,3 +1,4 @@
+/*
 var content = "index";
 switch(window.location.href.toString().split("/")[window.location.href.toString().split("/").length - 1].split("?")[0]){
     case "dashboard.html":
@@ -22,7 +23,7 @@ switch(window.location.href.toString().split("/")[window.location.href.toString(
     break;
     
 }
-
+*/
 
 
 App("app").head("./app/head")
