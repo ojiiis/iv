@@ -47,15 +47,17 @@
             <li><a href="terms.html">legal and terms</a></li>
           </ul>
         </li>
-        <li> <a href="about.html">About Us</a></li>
-        <li> <a href="plan.html">Plan</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li class="menu_has_children"><a href="#0">Page</a>
+        <li class="menu_has_children"><a href="#0">Investment Packages</a>
           <ul class="sub-menu">
-            <li><a href="error-404.html">Error - 404</a></li>
+            <li><a href="#0">Cypto</a></li>
+            <li><a href="#0">Forex</a></li>
+            <li><a href="#0">Stock</a></li>
+            <li><a href="#0">Real Estate</a></li>
           </ul>
         </li>
-        <li><a href="contact.html">Contact</a></li>
+        <li> <a href="#0">Affiliate</a></li>
+        <li><a href="registration.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
       </ul>
       <div class="nav-right">
         <ul class="account-menu ml-3">
