@@ -1,5 +1,15 @@
 async function handleForm(elem,e){
     e.preventDefault();
+    let btnClicked = null;
+    for(let i = 0; i < elem.children.length; i++){
+          
+          if(elem.children[i].getAttribute("clicked") == 1){
+              btnClicked = elem.children[i];
+              btnClicked.style.background = "green";
+              btnClicked.textContent = "working...";
+              btnClicked.disabled = true;
+          }
+      }
     const data = new FormData(elem);
     const payload = {};
     data.forEach((v,k)=>{
@@ -31,3 +41,13 @@ async function handleForm(elem,e){
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+function sf(elem){
+       for(let i = 0; i < elem.children.length; i++){
+           
+          elem.children[i].onclick = function(){
+          elem.children[i].setAttribute("clicked",1);    
+          } 
+          elem.children[i].setAttribute("clicked",0);
+      }
+  }
