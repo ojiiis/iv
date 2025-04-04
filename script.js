@@ -1,6 +1,7 @@
 async function handleForm(elem,e){
     e.preventDefault();
     let btnClicked = null;
+     sf(elem);
     for(let i = 0; i < elem.children.length; i++){
           
           if(elem.children[i].getAttribute("clicked") == 1){
