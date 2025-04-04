@@ -12,14 +12,20 @@ async function handleForm(elem,e){
     if(res.status){
         if(elem.action.includes("signup") || elem.action.includes("signin")){
             window.localStorage.setItem("token",res.token);
+            window.localStorage.setItem("user_acct_info",JSON.stringify(res.balance));
             window.location.href = "./dashboard.html";
-            window.localStorage.setItem("balance",JSON.stringify(res.balance));
         }
-        alert(res.message);
+          Swal.fire({
+            icon: "success",
+            text: res.message
+          });
     }else{
-        alert(res.message);
+        Swal.fire({
+            icon: "error",
+            text: res.message
+          });
     }
-    console.log(res);
+
 }
 
 function capitalizeFirstLetter(str) {
