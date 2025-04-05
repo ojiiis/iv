@@ -12,7 +12,7 @@
 </div>
 <!-- scroll-to-top end -->
 
-<div class="full-wh">
+<div class="full-wh" id="loading">
 <!-- STAR ANIMATION -->
 <div class="bg-animation">
 <div id='stars'></div>

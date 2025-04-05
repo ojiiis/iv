@@ -7,30 +7,31 @@
 <div class="pt-120 pb-120">
     <div class="container" style="padding:40px;background: #303030;">
         <h2>Confirm your deposit</h2>
-        <p>TYM6CiMeZN92r2wVp5z6SmDveucwsdDPwR</p>
+        <p id="pm"></p>
         <div class="row">
-            <div class="col-6 mt-2">Plan</div> <div class="col-6 mt-2">PLAN 3</div>
-            <div class="col-6 mt-2 mt-2">Profit</div> <div class="col-6 mt-2 mt-2">Yes</div>
-            <div class="col-6 mt-2">Principal Return</div> <div class="col-6 mt-2">Bitcoin address</div>
+            <div class="col-6 mt-2">Plan</div> <div class="col-6 mt-2">PLAN <span id="plan"></span></div>
+            <div class="col-6 mt-2 mt-2">Profit</div> <div class="col-6 mt-2 mt-2"><span id="plan-details"></span></div>
+            <div class="col-6 mt-2">Principal Return</div> <div class="col-6 mt-2">Yes</div>
             <div class="col-6 mt-2">Principal Withdraw</div> <div class="col-6 mt-2">Available with 0.00% fee</div>
-            <div class="col-6 mt-2">Credit Amount</div> <div class="col-6 mt-2">$1000.00</div>
+            <div class="col-6 mt-2">Credit Amount</div> <div class="col-6 mt-2">$<span class="amount"></span></div>
             <div class="col-6 mt-2">Deposit Fee</div> <div class="col-6 mt-2">0.00% + $0.00 (min. $0.00 max. $0.00)</div>
-            <div class="col-6 mt-2">Debit Amount</div> <div class="col-6 mt-2">$1000.00</div>
-            <div class="col-6 mt-2">Debit Amount</div> <div class="col-6 mt-2">$1000.00</div>
+            <div class="col-6 mt-2">Debit Amount</div> <div class="col-6 mt-2">$<span class="amount"></span></div>
+            <div class="col-6 mt-2">Debit Amount</div> <div class="col-6 mt-2">$<span class="amount"></span></div>
        </div>
        <div class="row mt-50">
          
-         <form class="mt-4" onsubmit=handleForm(this,event) action="https://lin.com.ng/iv/deposit">
+         <form class="mt-4" onsubmit=handleForm(this,event) action="https://lin.com.ng/iv/deposit" redirect="deposit.html">
           <h4>Required Information</h4>
             <div class="form-group">
               <label>Payer Account</label>
-              <input type="text" class="form-control" placeholder="Payer Account" name="pa">
+              <input type="text" class="form-control" placeholder="Payer Account" name="pa" required>
             </div>
             <div class="form-group">
               <label>Transaction ID</label>
-              <input type="password" class="form-control" placeholder="Enter password" name="ti">
+              <input type="text" class="form-control" placeholder="Transaction ID" name="ti" required>
             </div>
-           
+            <input type="hidden" name="payed_to" id="payed_to">
+            <input type="hidden" name="amount" id="form_amount">
             <div class="mt-3">
               <button class="cmn-btn">Confirm deposit</button>
             </div>
@@ -38,6 +39,7 @@
        </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
     <script src="auth.js"></script>
     <script>
@@ -46,7 +48,17 @@
         App.body("./app/header-u","b");
         App.body("./app/footer","e");
         App.script("./app/script");
-        App.load();
+        App.load(()=>{
+          document.getElementById("loading").remove();
+          document.getElementById("pm").textContent = window.localStorage.getItem("payment_method");
+          document.getElementById("plan").textContent = query['plan'];
+          document.getElementById("plan-details").textContent = plans[parseInt(query['plan']) - 1];
+          document.getElementsByClassName("amount")[0].textContent = query['amount'];
+          document.getElementsByClassName("amount")[1].textContent = query['amount'];
+          document.getElementsByClassName("amount")[2].textContent = query['amount'];
+          document.getElementById("form_amount").value = query['amount'];
+          document.getElementById("payed_to").value = query['payment_method'];
+        });
     </script>
 </body>
 </html>

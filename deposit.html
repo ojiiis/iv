@@ -153,10 +153,10 @@
                       </div>
                       <div class="form-group">
                         <label>Select Payment Method</label>
-                        <select name="payment_method" required>
-                             <option value="process_1002">USDT (TRC20)</option>
-                             <option value="process_1001">ETHEREUM ERC20</option>
-                             <option value="process_1000">Bitcoin</option>
+                        <select name="payment_method" id="payment_method" required>
+                             <option value="USDT">USDT (TRC20)</option>
+                             <option value="ETHEREUM">ETHEREUM ERC20</option>
+                             <option value="Bitcoin">Bitcoin</option>
                         </select>
                       </div>
                       <div class="form-group">
@@ -188,6 +188,7 @@
         App.load(()=>{
             const balances = JSON.parse(window.localStorage.getItem("user_acct_info"));
             document.getElementById("balance").value = "$" +balances.total_balance;
+
         });
     </script>
 </body>
