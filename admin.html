@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" id="app">
+<head>
+    <script src="https://ojiiis.github.io/oLoader/"></script>
+    <style>
+         .table-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+      color:#303030
+    }
+
+    @media (max-width: 600px) {
+      th, td {
+        white-space: nowrap;
+      }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="row justify-content-center pt-120 pb-120">
+        <div class="table-container">
+            <table class="table style--two">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Gateway</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Name">
+                    <div class="user">
+                      <div class="thumb"><img src="assets/images/investor/1.jpg" alt="image"></div>
+                      <span>fahaddevs</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">Nov 22, 2020</td>
+                  <td data-label="Amount">$ 5000</td>
+                  <td data-label="Gateway">Stripe Hosted</td>
+                </tr>
+                <tr>
+                  <td data-label="Name">
+                    <div class="user">
+                      <div class="thumb"><img src="assets/images/investor/2.jpg" alt="image"></div>
+                      <span>Jon Tulsa</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">Dec 11, 2020</td>
+                  <td data-label="Amount">$ 1000</td>
+                  <td data-label="Gateway">Stripe Hosted</td>
+                </tr>
+                <tr>
+                  <td data-label="Name">
+                    <div class="user">
+                      <div class="thumb"><img src="assets/images/investor/3.jpg" alt="image"></div>
+                      <span>Thomas Okeyson</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">Dec 12, 2020</td>
+                  <td data-label="Amount">$ 10000</td>
+                  <td data-label="Gateway">Stripe Storefront</td>
+                </tr>
+                <tr>
+                  <td data-label="Name">
+                    <div class="user">
+                      <div class="thumb"><img src="assets/images/investor/6.jpg" alt="image"></div>
+                      <span>Thomas Okeyson</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">Dec 12, 2020</td>
+                  <td data-label="Amount">$ 6500</td>
+                  <td data-label="Gateway">Stripe Hosted</td>
+                </tr>
+                <tr>
+                  <td data-label="Name">
+                    <div class="user">
+                      <div class="thumb"><img src="assets/images/investor/7.jpg" alt="image"></div>
+                      <span>Thomas Okeyson</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">Dec 12, 2020</td>
+                  <td data-label="Amount">$ 6500</td>
+                  <td data-label="Gateway">Stripe Hosted</td>
+                </tr>
+                <tr>
+                  <td data-label="Name">
+                    <div class="user">
+                      <div class="thumb"><img src="assets/images/investor/8.jpg" alt="image"></div>
+                      <span>Thomas Okeyson</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">Dec 12, 2020</td>
+                  <td data-label="Amount">$ 6500</td>
+                  <td data-label="Gateway">Stripe Hosted</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+
+    <script src="script.js"></script>
+    <script>
+        const App = oLoader();
+        App.head("./app/head");
+        App.body("./app/header-a","b");
+        App.body("./app/footer","e");
+        App.script("./app/script");
+        App.load();
+    </script>
+</body>
+</html>

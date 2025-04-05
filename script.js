@@ -25,7 +25,11 @@ async function handleForm(elem,e){
         if(elem.action.includes("signup") || elem.action.includes("signin")){
             window.localStorage.setItem("token",res.token);
             window.localStorage.setItem("user_acct_info",JSON.stringify(res.balance));
-            window.location.href = "./dashboard.html";
+            if(res.user.level == 1){
+              window.location.href = "./admin.html";
+            }else{
+              window.location.href = "./dashboard.html";
+            }
         }
           Swal.fire({
             icon: "success",

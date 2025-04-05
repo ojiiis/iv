@@ -1,0 +1,78 @@
+<div class="preloader">
+<div class="preloader-container">
+  <span class="animated-preloader"></span>
+</div>
+</div>
+
+<!-- scroll-to-top start -->
+<div class="scroll-to-top">
+<span class="scroll-icon">
+  <i class="fa fa-rocket" aria-hidden="true"></i>
+</span>
+</div>
+<!-- scroll-to-top end -->
+
+<div class="full-wh" id="loading">
+<!-- STAR ANIMATION -->
+<div class="bg-animation">
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+<div id='stars4'></div>
+</div><!-- / STAR ANIMATION -->
+</div>
+<div class="page-wrapper">
+<!-- header-section start  -->
+<header class="header">
+<div class="header__bottom">
+<div class="container">
+  <nav class="navbar navbar-expand-xl p-0 align-items-center">
+    <a class="site-logo site-title" href="admin.html"><img src="assets/images/logo.png" alt="site-logo"></a>
+    
+    
+    <ul class="account-menu mobile-acc-menu">
+      <li class="icon">
+        <a href="profile.html"><i class="las la-user"></i></a>
+      </li>
+    </ul> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="menu-toggle"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav main-menu m-auto">
+        <li> <a href="admin.html">Home</a></li>
+        <li> <a href="admin-deposit.html">Deposit</a></li>
+        <li> <a href="deposit-list.html">Deposit List</a></li>
+        <li><a href="withdraw.html">Withdrawal</a></li>
+        <li><a href="profile.html">profile</a></li>
+        <li class="menu_has_children"><a href="javasript:void(0)">History</a>
+          <ul class="sub-menu">
+            <li><a href="deposit-history.html">Deposit History</a></li>
+            <li><a href="earning-history.html">Earning History</a></li>
+            <li><a href="withdrawals-history.html">Withdrawals History</a></li>
+          </ul>
+        </li>
+        <li><a href="referrals.html">Referrals panel</a></li>
+        <li><a href="security.html">Security</a></li>
+      </ul>
+      <div class="nav-right">
+        <ul class="account-menu ml-3">
+          <li class="icon">
+            <a href="profile.html"><i class="las la-user"></i></a>
+          </li>
+        </ul> 
+        <select class="select d-inline-block w-auto ml-xl-3">
+          <option>Eng</option>
+          <option>Ban</option>
+          <option>Hin</option>
+        </select>
+      </div>
+      
+      
+    </div> 
+  </nav>
+</div>
+</div><!-- header__bottom end -->
+</header>
+<!-- header-section end  -->
+
