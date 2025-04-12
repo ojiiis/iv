@@ -42,17 +42,19 @@
       <div class="container">
         <div class="row">
           <div class="table-container col-12">
-            <h2>Recently Signed Up</h2>
+            <h2>Recently Deposit</h2>
             <table class="table style--two">
               <thead>
                 <tr>
                   <th>User Id</th>
                   <th>Fullname</th>
-                  <th>Username</th>
-                  <th>Email</th>
-                  <th>Usdt</th>
-                  <th>Eth</th>
-                  <th>Btc</th>
+                  <th>Currency Type</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Payed to</th>
+                  <th>Transaction id</th>
+                  <th>Date</th>
+                  <th>Update Transaction</th>
                 </tr>
               </thead>
               <tbody id="tbody">
@@ -68,6 +70,18 @@
 
     <script src="script.js"></script>
     <script>
+         async  function uMap(elem){
+
+                const req = await fetch(api+"update_trans",{
+                method:"POST",
+                headers:{"token":window.localStorage.getItem("token")},
+                body:JSON.stringify({
+                    "id":elem.id,
+                    "value":elem.value
+                })
+              });
+              const res = await req.json();
+            }
         const App = oLoader();
         App.head("./app/head");
         App.body("./app/header-a","b");
@@ -76,7 +90,8 @@
         App.load(()=>{
           (
             async ()=>{
-              const req = await fetch(api+"recent_users",{
+             
+              const req = await fetch(api+"deposits",{
                 method:"POST",
                 headers:{"token":window.localStorage.getItem("token")}
               });
@@ -87,18 +102,29 @@
                   list += `<tr>
   <td>${res.data[i].uid}</td>
     <td>${res.data[i].full_name}</td>
-    <td>${res.data[i].username}</td>
-      <td>${res.data[i].email}</td>
-      <td>${res.data[i].usdt_trc20}</td>
-        <td>${res.data[i].eth_erc20}</td>
-          <td>${res.data[i].bitcoin}</td>
-          
+    <td>${res.data[i].payment_type}</td>
+      <td>${res.data[i].type}</td>
+      <td>${res.data[i].status}</td>
+        <td>${res.data[i].payer_account}</td>
+          <td>${res.data[i].transaction_id}</td>
+          <td>${res.data[i].created_at}</td>
+          <td>
+        <select onchange="uMap(this)" id="${res.data[i].id}">
+            <option value="pending" ${(res.data[i].status == "pending")?"selected":''}> Pending </option>
+            <option value="completed" ${(res.data[i].status == "completed")?"selected":''}> Completed </option>
+            <option value="failed" ${(res.data[i].status == "failed")?"selected":''}> Failed </option>
+        </select>    
+        </td>
 </tr>`;
                 }
                 document.getElementById("tbody").innerHTML = list;
               }
+
+              
             }
+            
           )();
+          
         });
     </script>
 </body>

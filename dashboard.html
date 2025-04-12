@@ -100,7 +100,7 @@
               </div><!-- row end -->
               <div class="row" style="margin-top:30px">
                 <marquee behavior="scroll" direction="left">
-                  <span class="highlight">News Flash:</span> Enjoy massive bonus offer of up to $100,000 weekly when you make an investment of $10,000... Trade Bitcoin options and digital options with us. Pick the type of option that best suits your trading style and profitability expectations.
+                  <span class="highlight">News Flash:</span> <span id="news_flash"></span>
                 </marquee>
               </div>
               <div class="row mt-50">
@@ -114,122 +114,10 @@
                           <th>Amount</th>
                           <th>Wallet</th>
                           <th>Details</th>
-                          <th>Post Balance</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td data-label="Date">21/02/2020</td>
-                          <td data-label="Transaction ID">
-                            <span class="base--color">DZQXF5NAN2AT</span>
-                          </td>
-                          <td data-label="Amount">
-                            <span class="text-success">+ $17.5</span>
-                          </td>
-                          <td data-label="Wallet">
-                            <span class="badge base--bg">Interest Wallet</span>
-                          </td>
-                          <td data-label="Details">17.5 USD Interest From Crown</td>
-                          <td data-label="Post Balance">$22991.9</td>
-                        </tr>
-                        <tr>
-                          <td data-label="Date">21/02/2020</td>
-                          <td data-label="Transaction ID">
-                            <span class="base--color">DZQXF5NAN2AT</span>
-                          </td>
-                          <td data-label="Amount">
-                            <span class="text-success">+ $17.5</span>
-                          </td>
-                          <td data-label="Wallet">
-                            <span class="badge base--bg">Interest Wallet</span>
-                          </td>
-                          <td data-label="Details">17.5 USD Interest From Crown</td>
-                          <td data-label="Post Balance">$22991.9</td>
-                        </tr>
-                        <tr>
-                          <td data-label="Date">21/02/2020</td>
-                          <td data-label="Transaction ID">
-                            <span class="base--color">DZQXF5NAN2AT</span>
-                          </td>
-                          <td data-label="Amount">
-                            <span class="text-success">+ $17.5</span>
-                          </td>
-                          <td data-label="Wallet">
-                            <span class="badge base--bg">Interest Wallet</span>
-                          </td>
-                          <td data-label="Details">17.5 USD Interest From Crown</td>
-                          <td data-label="Post Balance">$22991.9</td>
-                        </tr>
-                        <tr>
-                          <td data-label="Date">21/02/2020</td>
-                          <td data-label="Transaction ID">
-                            <span class="base--color">DZQXF5NAN2AT</span>
-                          </td>
-                          <td data-label="Amount">
-                            <span class="text-success">+ $17.5</span>
-                          </td>
-                          <td data-label="Wallet">
-                            <span class="badge base--bg">Interest Wallet</span>
-                          </td>
-                          <td data-label="Details">17.5 USD Interest From Crown</td>
-                          <td data-label="Post Balance">$22991.9</td>
-                        </tr>
-                        <tr>
-                          <td data-label="Date">21/02/2020</td>
-                          <td data-label="Transaction ID">
-                            <span class="base--color">DZQXF5NAN2AT</span>
-                          </td>
-                          <td data-label="Amount">
-                            <span class="text-success">+ $17.5</span>
-                          </td>
-                          <td data-label="Wallet">
-                            <span class="badge base--bg">Interest Wallet</span>
-                          </td>
-                          <td data-label="Details">17.5 USD Interest From Crown</td>
-                          <td data-label="Post Balance">$22991.9</td>
-                        </tr>
-                        <tr>
-                          <td data-label="Date">21/02/2020</td>
-                          <td data-label="Transaction ID">
-                            <span class="base--color">DZQXF5NAN2AT</span>
-                          </td>
-                          <td data-label="Amount">
-                            <span class="text-success">+ $17.5</span>
-                          </td>
-                          <td data-label="Wallet">
-                            <span class="badge base--bg">Interest Wallet</span>
-                          </td>
-                          <td data-label="Details">17.5 USD Interest From Crown</td>
-                          <td data-label="Post Balance">$22991.9</td>
-                        </tr>
-                        <tr>
-                          <td data-label="Date">21/02/2020</td>
-                          <td data-label="Transaction ID">
-                            <span class="base--color">DZQXF5NAN2AT</span>
-                          </td>
-                          <td data-label="Amount">
-                            <span class="text-success">+ $17.5</span>
-                          </td>
-                          <td data-label="Wallet">
-                            <span class="badge base--bg">Interest Wallet</span>
-                          </td>
-                          <td data-label="Details">17.5 USD Interest From Crown</td>
-                          <td data-label="Post Balance">$22991.9</td>
-                        </tr>
-                        <tr>
-                          <td data-label="Date">21/02/2020</td>
-                          <td data-label="Transaction ID">
-                            <span class="base--color">DZQXF5NAN2AT</span>
-                          </td>
-                          <td data-label="Amount">
-                            <span class="text-success">+ $17.5</span>
-                          </td>
-                          <td data-label="Wallet">
-                            <span class="badge base--bg">Interest Wallet</span>
-                          </td>
-                          <td data-label="Details">17.5 USD Interest From Crown</td>
-                          <td data-label="Post Balance">$22991.9</td>
-                        </tr>
+                      <tbody id="tbody">
+                      
                       </tbody>
                     </table>
                   </div>
@@ -256,6 +144,34 @@
             document.getElementById("te").textContent = "$" +balances.total_earning;
             document.getElementById("ad").textContent = "$" +balances.active_deposit;
             document.getElementById("la").textContent =  balances.last_access;
+          
+            //
+            (
+            async ()=>{
+              const req = await fetch(api+"recent_trans",{
+                method:"POST",
+                headers:{"token":window.localStorage.getItem("token")}
+              });
+              const res = await req.json();
+              if(res.status){
+                let list = '';
+                for(let i = 0; i < res.data.length; i++){
+                  list += `<tr>
+  <td>${res.data[i].created_at}</td>
+    <td>${res.data[i].transaction_id}</td>
+    <td>${res.data[i].amount}</td>
+      <td>Interest Wallet</td>
+      <td>${res.data[i].status}</td>
+          
+</tr>`;
+                }
+                document.getElementById("tbody").innerHTML = list;
+                document.getElementById("news_flash").textContent =  res.news_flash;
+                
+              }
+            }
+          )();
+
         });
     </script>
 </body>

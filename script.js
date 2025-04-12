@@ -1,3 +1,5 @@
+
+const api = "https://lin.com.ng/iv/";
 async function handleForm(elem,e){
     e.preventDefault();
     let working = "Processing..."
@@ -15,17 +17,17 @@ async function handleForm(elem,e){
     });
     let res = null;
     try{
-        const req = await fetch(elem.action,{method:"POST",headers:{"token":window.localStorage.getItem("token")},body:JSON.stringify(payload)});
+        const req = await fetch(api+elem.getAttribute("route"),{method:"POST",headers:{"token":window.localStorage.getItem("token")},body:JSON.stringify(payload)});
      res = await req.json();
     }catch(e){
         res = {status:0,message:"Server error!"}
     }
     // console.log(res);
     if(res.status){
-        if(elem.action.includes("signup") || elem.action.includes("signin")){
+        if(elem.getAttribute("route").includes("signup") || elem.getAttribute("route").includes("signin")){
             window.localStorage.setItem("token",res.token);
             window.localStorage.setItem("user_acct_info",JSON.stringify(res.balance));
-            if(res.user.level == 1){
+            if(res.user?.level == 1){
               window.location.href = "./admin.html";
             }else{
               window.location.href = "./dashboard.html";
