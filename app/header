@@ -49,13 +49,13 @@
         </li>
         <li class="menu_has_children"><a href="#0">Investment Packages</a>
           <ul class="sub-menu">
-            <li><a href="#0">Cypto</a></li>
-            <li><a href="#0">Forex</a></li>
-            <li><a href="#0">Stock</a></li>
-            <li><a href="#0">Real Estate</a></li>
+            <li><a href="./?tab=crypto">Crypto</a></li>
+            <li><a href="./?tab=forex">Forex</a></li>
+            <li><a href="./?tab=stock">Stock</a></li>
+            <li><a href="./?tab=real-estate">Real Estate</a></li>
           </ul>
         </li>
-        <li> <a href="#0">Affiliate</a></li>
+        <li> <a href="./">Affiliate</a></li>
         <li><a href="registration.html">Register</a></li>
         <li><a href="login.html">Login</a></li>
       </ul>
